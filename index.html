@@ -1,28 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Novel Studio OMNI</title>
-  <link rel="stylesheet" href="styles/theme.css">
-  <script type="module" src="scripts/app.js"></script>
+<meta charset="utf-8">
+<title>Novel Studio OMNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="center">
 
-<div id="auth-box" data-auth="out">
-  <h2>로그인</h2>
-  <input id="email" placeholder="이메일">
-  <input id="password" type="password" placeholder="비밀번호">
-  <button id="loginBtn">로그인</button>
-  <button id="registerBtn">회원가입</button>
-  <button id="anonBtn">익명 시작</button>
+<h1>Novel Studio OMNI</h1>
+<p class="sub">소설 제작 · 연재 · 세계관 · 작화</p>
+
+<div class="card">
+  <input id="nickname" placeholder="닉네임 (필수)">
+  <button onclick="login()">시작하기</button>
 </div>
 
-<div id="after-login" data-auth="in">
-  <h2>환영합니다</h2>
-  <a href="studio.html">✍️ 작가 스튜디오</a>
-  <a href="reader.html">📖 공개 소설 보기</a>
-  <button id="logoutBtn">로그아웃</button>
-</div>
-
+<script src="js/auth.js"></script>
 </body>
 </html>
