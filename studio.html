@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>작가 스튜디오</title>
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/editor.css">
+  <script type="module" src="scripts/studio.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>✍️ 작가 스튜디오</h1>
+  <button id="newNovelBtn">새 소설</button>
+  <button id="logoutBtn">로그아웃</button>
+</header>
+
+<main>
+  <aside id="novelList"></aside>
+
+  <section id="editorArea" hidden>
+    <input id="novelTitle" placeholder="소설 제목" />
+    
+    <div id="episodeBar">
+      <select id="episodeSelect"></select>
+      <button id="newEpisodeBtn">회차 추가</button>
+    </div>
+
+    <textarea id="editor" placeholder="여기에 소설을 작성하세요..."></textarea>
+
+    <div id="editorActions">
+      <label>
+        <input type="checkbox" id="isPublic"> 공개
+      </label>
+      <span id="saveStatus">자동 저장됨</span>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
