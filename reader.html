@@ -1,38 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>공개 소설</title>
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/reader.css">
-  <link rel="stylesheet" href="styles/comments.css">
-  <script type="module" src="scripts/reader.js"></script>
+<meta charset="utf-8">
+<title>독자 뷰 · Novel Studio OMNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header>
-  <h1>📖 공개 소설 플랫폼</h1>
-  <a href="index.html">홈</a>
+<header class="top">
+  <h2>공개 소설</h2>
+  <nav>
+    <a href="explore.html">작품 탐색</a>
+    <a href="dashboard.html">대시보드</a>
+  </nav>
 </header>
 
-<main>
-  <aside id="publicNovels"></aside>
+<main id="reader"></main>
 
-  <section id="readingArea" hidden>
-    <h2 id="novelTitle"></h2>
+<section class="comments">
+  <h3>댓글</h3>
+  <input id="commentInput" placeholder="댓글을 남겨보세요">
+  <button onclick="addComment()">등록</button>
+  <div id="commentList"></div>
+</section>
 
-    <select id="episodeSelect"></select>
-
-    <article id="novelContent"></article>
-
-    <section id="comments">
-      <h3>댓글</h3>
-      <div id="commentList"></div>
-      <textarea id="commentInput" placeholder="댓글을 입력하세요"></textarea>
-      <button id="commentBtn">댓글 작성</button>
-    </section>
-  </section>
-</main>
-
+<script src="js/reader.js"></script>
+<script src="js/comments.js"></script>
 </body>
 </html>
