@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>세계관</title>
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/world.css">
+  <script type="module" src="scripts/world.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>🌍 세계관 설정</h1>
+  <a href="studio.html">작가 스튜디오</a>
+</header>
+
+<main>
+  <section id="wiki">
+    <h2>위키</h2>
+    <textarea id="wikiContent" placeholder="세계관 설명..."></textarea>
+    <button id="saveWiki">저장</button>
+  </section>
+
+  <section id="timeline">
+    <h2>타임라인</h2>
+    <input id="eventTitle" placeholder="사건 제목">
+    <input id="eventTime" placeholder="연도/시점">
+    <button id="addEvent">추가</button>
+    <ul id="timelineList"></ul>
+  </section>
+
+  <section id="relations">
+    <h2>관계도</h2>
+    <input id="nodeA" placeholder="인물 A">
+    <input id="nodeB" placeholder="인물 B">
+    <input id="relationText" placeholder="관계">
+    <button id="addRelation">추가</button>
+    <svg id="relationGraph" width="600" height="400"></svg>
+  </section>
+</main>
+
+</body>
+</html>
