@@ -1,43 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>세계관</title>
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/world.css">
-  <script type="module" src="scripts/world.js"></script>
+<meta charset="utf-8">
+<title>세계관 · Novel Studio OMNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header>
-  <h1>🌍 세계관 설정</h1>
-  <a href="studio.html">작가 스튜디오</a>
+<header class="top">
+  <h2>세계관 위키</h2>
+  <nav>
+    <a href="dashboard.html">대시보드</a>
+  </nav>
 </header>
 
-<main>
-  <section id="wiki">
-    <h2>위키</h2>
-    <textarea id="wikiContent" placeholder="세계관 설명..."></textarea>
-    <button id="saveWiki">저장</button>
-  </section>
+<main class="editor">
+  <textarea id="worldText" placeholder="세계관 설정을 작성하세요"></textarea>
+  <button onclick="saveWorld()">저장</button>
 
-  <section id="timeline">
-    <h2>타임라인</h2>
-    <input id="eventTitle" placeholder="사건 제목">
-    <input id="eventTime" placeholder="연도/시점">
-    <button id="addEvent">추가</button>
-    <ul id="timelineList"></ul>
-  </section>
-
-  <section id="relations">
-    <h2>관계도</h2>
-    <input id="nodeA" placeholder="인물 A">
-    <input id="nodeB" placeholder="인물 B">
-    <input id="relationText" placeholder="관계">
-    <button id="addRelation">추가</button>
-    <svg id="relationGraph" width="600" height="400"></svg>
-  </section>
+  <h3>관계도</h3>
+  <svg id="relation" width="600" height="400"></svg>
 </main>
 
+<script src="js/world.js"></script>
+<script src="js/relation_svg.js"></script>
 </body>
 </html>
