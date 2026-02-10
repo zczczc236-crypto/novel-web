@@ -1,43 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<title>Novel Studio OMNI</title>
-<link rel="stylesheet" href="css/editor.css" />
-<script type="module" src="js/editor.js"></script>
+  <meta charset="UTF-8">
+  <title>Novel Studio OMNI</title>
+  <link rel="stylesheet" href="styles/theme.css">
+  <script type="module" src="scripts/app.js"></script>
 </head>
 <body>
-<header>
-  <h1>📚 Novel Studio OMNI</h1>
-  <button id="logout">로그아웃</button>
-</header>
 
-<main>
-  <aside>
-    <button id="newStory">＋ 새 소설</button>
-    <div id="storyList"></div>
-  </aside>
+<div id="auth-box" data-auth="out">
+  <h2>로그인</h2>
+  <input id="email" placeholder="이메일">
+  <input id="password" type="password" placeholder="비밀번호">
+  <button id="loginBtn">로그인</button>
+  <button id="registerBtn">회원가입</button>
+  <button id="anonBtn">익명 시작</button>
+</div>
 
-  <section>
-    <input id="storyTitle" placeholder="소설 제목" />
-    <textarea id="content"></textarea>
+<div id="after-login" data-auth="in">
+  <h2>환영합니다</h2>
+  <a href="studio.html">✍️ 작가 스튜디오</a>
+  <a href="reader.html">📖 공개 소설 보기</a>
+  <button id="logoutBtn">로그아웃</button>
+</div>
 
-    <input type="file" accept="image/*" id="imgUpload" />
-
-    <button id="publish">공개</button>
-    <button id="aiReview">AI 평가</button>
-    <button id="exportTxt">TXT</button>
-    <button id="exportPdf">PDF</button>
-    <button id="exportEpub">EPUB</button>
-
-    <div id="aiPanel"></div>
-
-    <h3>🌍 세계관</h3>
-    <textarea id="wiki"></textarea>
-
-    <h3>🕸 관계도</h3>
-    <svg id="relationMap" width="600" height="400"></svg>
-  </section>
-</main>
 </body>
 </html>
