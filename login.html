@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><title>Login</title></head>
+<body>
+<h2>Novel Studio OMNI</h2>
+<input id="email" placeholder="email">
+<input id="pw" type="password" placeholder="password">
+<button onclick="login()">로그인</button>
+<button onclick="signup()">회원가입</button>
+<script type="module">
+import { loginUser, signupUser } from './js/auth.js';
+window.login=()=>loginUser(email.value,pw.value);
+window.signup=()=>signupUser(email.value,pw.value);
+</script>
+</body></html>
