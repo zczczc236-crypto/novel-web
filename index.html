@@ -1,30 +1,43 @@
-html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Novel Studio OMNI</title>
-<link rel="stylesheet" href="css/style.css" />
-<link rel="manifest" href="pwa/manifest.json" />
-<meta name="theme-color" content="#6366f1" />
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<link rel="stylesheet" href="css/editor.css" />
+<script type="module" src="js/editor.js"></script>
 </head>
 <body>
 <header>
-<h1>📚 Novel Studio OMNI</h1>
-<nav>
-<button onclick="toggleTheme()">🌙</button>
-<button onclick="newStory()">＋ 작품</button>
-<a href="reader.html" target="_blank">독자 뷰</a>
-</nav>
+  <h1>📚 Novel Studio OMNI</h1>
+  <button id="logout">로그아웃</button>
 </header>
-<main id="app"></main>
-<script src="js/app.js"></script>
-<script src="js/world.js"></script>
-<script src="js/comments.js"></script>
-<script src="js/ai.js"></script>
-<script src="js/export.js"></script>
+
+<main>
+  <aside>
+    <button id="newStory">＋ 새 소설</button>
+    <div id="storyList"></div>
+  </aside>
+
+  <section>
+    <input id="storyTitle" placeholder="소설 제목" />
+    <textarea id="content"></textarea>
+
+    <input type="file" accept="image/*" id="imgUpload" />
+
+    <button id="publish">공개</button>
+    <button id="aiReview">AI 평가</button>
+    <button id="exportTxt">TXT</button>
+    <button id="exportPdf">PDF</button>
+    <button id="exportEpub">EPUB</button>
+
+    <div id="aiPanel"></div>
+
+    <h3>🌍 세계관</h3>
+    <textarea id="wiki"></textarea>
+
+    <h3>🕸 관계도</h3>
+    <svg id="relationMap" width="600" height="400"></svg>
+  </section>
+</main>
 </body>
 </html>
