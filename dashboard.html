@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Dashboard · Novel Studio OMNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="top">
+  <h2 id="welcome"></h2>
+  <button onclick="logout()">로그아웃</button>
+</header>
+
+<main class="grid">
+
+  <a class="card link" href="editor.html">
+    ✍ 소설 제작
+    <span>신규 집필 / 수정</span>
+  </a>
+
+  <a class="card link" href="series.html">
+    📚 연재 관리
+    <span>회차 · 공개 설정</span>
+  </a>
+
+  <a class="card link" href="explore.html">
+    🌍 공개 작품
+    <span>플랫폼 / 독자</span>
+  </a>
+
+  <a class="card link" href="world.html">
+    🧭 세계관
+    <span>위키 · 관계도</span>
+  </a>
+
+  <a class="card link" href="timeline.html">
+    ⏳ 연표
+    <span>사건 흐름</span>
+  </a>
+
+  <a class="card link" href="drawing.html">
+    🎨 작화툴
+    <span>이미지 제작</span>
+  </a>
+
+</main>
+
+<script src="js/auth.js"></script>
+<script>
+  const user = getUser();
+  if (!user) location.href = "index.html";
+  document.getElementById("welcome").innerText =
+    `${user.nickname} 작가 스튜디오`;
+</script>
+
+</body>
+</html>
