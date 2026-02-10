@@ -1,11 +1,39 @@
-const USERS_KEY = "users";
+// js/auth.js
 
-function loadUsers() { return JSON.parse(localStorage.getItem(USERS_KEY) || "[]"); }
+const AUTH_KEY = "novel_user";
 
-function saveUsers(users) { localStorage.setItem(USERS_KEY, JSON.stringify(users)); }
+function login() {
+  const nick = document.getElementById("nickname").value.trim();
+  if (!nick) {
+    alert("닉네임을 입력하세요.");
+    return;
+  }
 
-function register() { const id = reg_id.value; const pw = reg_pw.value; const users = loadUsers(); if (users.find(u => u.id === id)) return alert("이미 존재"); users.push({ id, pw }); saveUsers(users); location.href = "login.html"; }
+  const user = {
+    nickname: nick,
+    id: "u_" + Math.random().toString(36).slice(2),
+    created: Date.now()
+  };
 
-function login() { const id = login_id.value; const pw = login_pw.value; const users = loadUsers(); const user = users.find(u => u.id === id && u.pw === pw); if (!user) return alert("실패"); localStorage.setItem("session", id); location.href = "dashboard.html"; }
+  localStorage.setItem(AUTH_KEY, JSON.stringify(user));
+  location.href = "dashboard.html";
+}
 
-function logout() { localStorage.removeItem("session"); location.href = "index.html"; }
+function logout() {
+  localStorage.removeItem(AUTH_KEY);
+  location.href = "index.html";
+}
+
+function getUser() {
+  const raw = localStorage.getItem(AUTH_KEY);
+  if (!raw) return null;
+  return JSON.parse(raw);
+}
+
+// 자동 로그인 처리
+(function autoLogin(){
+  const user = getUser();
+  if (user && location.pathname.endsWith("index.html")) {
+    location.href = "dashboard.html";
+  }
+})();
