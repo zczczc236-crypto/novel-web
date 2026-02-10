@@ -1,0 +1,30 @@
+html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Novel Studio OMNI</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="manifest" href="pwa/manifest.json" />
+<meta name="theme-color" content="#6366f1" />
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+<header>
+<h1>📚 Novel Studio OMNI</h1>
+<nav>
+<button onclick="toggleTheme()">🌙</button>
+<button onclick="newStory()">＋ 작품</button>
+<a href="reader.html" target="_blank">독자 뷰</a>
+</nav>
+</header>
+<main id="app"></main>
+<script src="js/app.js"></script>
+<script src="js/world.js"></script>
+<script src="js/comments.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/export.js"></script>
+</body>
+</html>
