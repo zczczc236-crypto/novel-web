@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>연재 관리 · Novel Studio OMNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="top">
+  <h2>연재 관리</h2>
+  <nav>
+    <a href="editor.html">← 에디터</a>
+    <a href="dashboard.html">대시보드</a>
+  </nav>
+</header>
+
+<main class="editor">
+
+  <input id="seriesTitle" placeholder="연재 제목">
+  <textarea id="episodeText" placeholder="회차 내용"></textarea>
+
+  <button onclick="addEpisode()">회차 추가</button>
+
+  <ul id="episodeList"></ul>
+
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/series.js"></script>
+</body>
+</html>
