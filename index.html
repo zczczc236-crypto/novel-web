@@ -1,21 +1,57 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<title>Novel Studio OMNI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8" />
+<title>소설 제작 플랫폼</title>
+<link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="center">
+<body>
+<header>
+<h1>소설 제작 플랫폼</h1>
+<button onclick="logout()">로그아웃</button>
+</header>
 
-<h1>Novel Studio OMNI</h1>
-<p class="sub">소설 제작 · 연재 · 세계관 · 작화</p>
 
-<div class="card">
-  <input id="nickname" placeholder="닉네임 (필수)">
-  <button onclick="login()">시작하기</button>
-</div>
+<main>
+<input id="title" placeholder="소설 제목" />
+<textarea id="editor" placeholder="여기에 소설을 작성하세요"></textarea>
 
+
+<section>
+<h3>이미지 업로드</h3>
+<input type="file" id="imageUpload" />
+</section>
+
+
+<section>
+<h3>AI 평가</h3>
+<button onclick="runAIEval()">평가 받기</button>
+<pre id="aiResult"></pre>
+</section>
+
+
+<section>
+<h3>세계관 관계도</h3>
+<svg id="worldmap" width="600" height="400"></svg>
+</section>
+
+
+<section>
+<button onclick="exportPDF()">PDF</button>
+<button onclick="exportEPUB()">EPUB</button>
+</section>
+
+
+<section id="comments"></section>
+</main>
+
+
+<script src="js/firebase.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/comments.js"></script>
+<script src="js/ai_eval.js"></script>
+<script src="js/worldmap.js"></script>
+<script src="js/export.js"></script>
 </body>
 </html>
